@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" href="./ressource/images/Code-logo .PNG">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <title>Gomycode-Projet-DOM</title>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="container__contents">
+      <div class="container__title">
+        <h2>Panier</h2>
+      </div>
+      
+      <table cellspacing="10" cellpadding="5" class="table">
+        <div class="table__content">
+          <thead>
+            <th align="start">Nom de l'article</th>
+            <th align="start">Quantité</th>
+            <th align="start">Prix unitaire</th>
+            <th align="start">Sous total</th>
+          </thead>
+          <tbody id="lists-product">
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <form id="myForm">
+                <td>
+                  <input type="text" name="name" id="name" placeholder="Recherche d'article" class="input" required>
+                </td>
+                <td colspan="2">
+                  <input type="tel" id="amount-input" required class="input" placeholder="0">
+                </td>
+                <td>
+                  <input type="submit" class="btn" value="Ajoutez l'article">
+                </td>
+              </form>
+            </tr>
+          </tfoot>
+        </div>
+      </table>
+    <div class="total">
+      <h2>Total:<span class="global-total color-unique"></span></h2>
+    </div>
+  </div>
+  
+  <script src="./js/script.js"></script>
+</body>
+</html>

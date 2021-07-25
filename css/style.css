@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Roboto Mono", monospace;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: #090b1a;
+}
+
+table {
+  flex-wrap: wrap;
+  background: white;
+  width: 100%;
+  color: rgba(29, 27, 27, 0.87);
+}
+table .table__content {
+  margin: 20px;
+}
+
+.container {
+  width: 70%;
+  flex-wrap: wrap;
+  color: white;
+}
+.container__contents {
+  margin: 20px;
+}
+.container__contents .container__title h2 {
+  margin-bottom: 20px;
+}
+.container__contents .total h2 {
+  margin-top: 10px;
+}
+.container__contents .total {
+  text-align: center;
+}
+
+.name__article {
+  line-height: 30px;
+  display: flex;
+  margin: 0px 50px;
+  gap: 10px;
+}
+.name__article img {
+  margin-top: 10px;
+  width: 70px;
+  height: 70px;
+}
+.name__article .del-des {
+  margin-top: 15px;
+}
+.name__article .delete__article {
+  color: red;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1em;
+  transition: 0.3s ease-in-out;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #9d9b9b;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin-top: 5px;
+  outline: none;
+  background: #9d9b9b;
+  border: none;
+}
+button:hover {
+  background: #0dcbfa;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 30px rgba(88, 87, 87, 0.137);
+}
+
+.compteur {
+  display: flex;
+  margin-top: 8px;
+  gap: 8px;
+}
+.compteur .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 35px;
+  border: 1px solid rgba(44, 43, 43, 0.315);
+}
+
+.input {
+  padding: 0.2rem;
+}
+
+#amount-input {
+  width: 70px;
+}
+
+.btn {
+  background: #1290f1;
+  border-radius: 10px;
+  padding: 0.2rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  color: white;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+.btn:hover {
+  background: rgba(106, 106, 236, 0.589);
+}
+
+.color {
+  color: #1290f1;
+}
+
+.delete {
+  display: none;
+}
+
+.color-unique {
+  color: #1290f1;
+}
+
+/*# sourceMappingURL=style.css.map */
