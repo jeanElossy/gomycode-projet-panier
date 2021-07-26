@@ -82,7 +82,7 @@ contentLine.appendChild(subTotal);
 document.querySelectorAll(".btn-plus").forEach(btn => btn.addEventListener("click", augmenterQte));
 document.querySelectorAll(".btn-moins").forEach(btn => btn.addEventListener("click", diminuerQte));
 document.querySelectorAll(".delete__article").forEach(elt => elt.addEventListener("click", removeArticle));
-  
+
 }
 
 // La fonction ajouter une ligne
@@ -91,7 +91,7 @@ function ajouter(e){
 e.preventDefault();
 createElement();
 total();
-
+ 
 } 
 
 function augmenterQte(){
@@ -118,16 +118,20 @@ function total(){
  
   let tab = [];
   const subTotal = document.querySelectorAll(".subTotal");
-  subTotal.forEach(element=> tab.push(parseFloat(element.innerHTML)));
+  
+  if(subTotal.length == 0){
+      let totalSpan = document.querySelector('.global-total');
+      totalSpan.innerHTML = 0 + " Fcfa";
+      return 0;
+  }
+  subTotal.forEach(element=> tab.push(parseInt(element.innerHTML)));
   const prixTotal = tab.reduce((acc, curr) => acc + curr);
-  console.log(prixTotal); 
   let totalSpan = document.querySelector('.global-total');
   totalSpan.innerHTML = prixTotal + "Fcfa";
-  console.log(totalSpan.innerHTML);
-
 }
 
-function removeArticle(elt) {
+function removeArticle() {
  this.parentElement.parentElement.parentElement.parentElement.remove();
 	total();
 }
+
