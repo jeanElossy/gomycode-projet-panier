@@ -81,7 +81,7 @@ contentLine.appendChild(subTotal);
 // La fonction augmenter la quantité.
 document.querySelectorAll(".btn-plus").forEach(btn => btn.addEventListener("click", augmenterQte));
 document.querySelectorAll(".btn-moins").forEach(btn => btn.addEventListener("click", diminuerQte));
-document.querySelectorAll(".delete__article").forEach(btn => btn.addEventListener("click", supprimer));
+document.querySelectorAll(".delete__article").forEach(elt => elt.addEventListener("click", removeArticle));
   
 }
 
@@ -91,13 +91,15 @@ function ajouter(e){
 e.preventDefault();
 createElement();
 total();
+
 } 
 
 function augmenterQte(){
   let qty =this.previousElementSibling
   qty.innerText= parseInt(this.previousElementSibling.innerText)+1;
   let price = parseInt(this.parentElement.parentElement.nextElementSibling.children[0].children[0].textContent);
-  this.parentElement.parentElement.nextElementSibling.nextElementSibling.children[0].children[0].innerHTML = price * parseFloat(qty.textContent)
+  this.parentElement.parentElement.nextElementSibling.nextElementSibling.children[0].children[0].innerHTML = price * parseFloat(qty.textContent);
+  total();
 }
 
 // // La fonction diminuer la quantité
@@ -108,25 +110,24 @@ function diminuerQte(){
     let price = parseInt(this.parentElement.parentElement.nextElementSibling.children[0].children[0].textContent);
     this.parentElement.parentElement.nextElementSibling.nextElementSibling.children[0].children[0].innerHTML = price * parseInt(qty.textContent);
   }
-}
-function supprimer(){
-  const tableLine = document.querySelector("tr");
-  tableLine.splice(0,1);
+  total();
 }
 
 function total(){
   //creation du tab de save
+ 
   let tab = [];
   const subTotal = document.querySelectorAll(".subTotal");
-  subTotal.forEach(element=> tab.push(parseFloat(element.innerHTML)))
-  console.log(tab)
+  subTotal.forEach(element=> tab.push(parseFloat(element.innerHTML)));
   const prixTotal = tab.reduce((acc, curr) => acc + curr);
-  console.log(prixTotal);
+  console.log(prixTotal); 
   let totalSpan = document.querySelector('.global-total');
-  totalSpan.innerHTML = " " + parseFloat(prixTotal) + "F cfa";
+  totalSpan.innerHTML = prixTotal + "Fcfa";
+  console.log(totalSpan.innerHTML);
+
 }
 
-
-
-
-
+function removeArticle(elt) {
+ this.parentElement.parentElement.parentElement.parentElement.remove();
+	total();
+}
